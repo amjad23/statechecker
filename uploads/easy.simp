@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sim-project version="11.91" multi-file="no" uid="simp365379164c014962b2963b8a318c674e">
+  <meta>
+    <name>Project</name>
+    <authors> </authors>
+    <description />
+  </meta>
+  <counters models="1">
+    <entity-names>
+      <counter>
+        <item-type type-id="initial-state" type="UmlInitialState" />
+        <value>1</value>
+      </counter>
+      <counter>
+        <item-type type-id="final-state" type="UmlFinalState" />
+        <value>1</value>
+      </counter>
+      <counter>
+        <item-type type-id="state" type="UmlState" />
+        <value>1</value>
+      </counter>
+    </entity-names>
+    <entity-ids>
+      <counter>
+        <item-type type-id="" type="AbstractElementGroup" />
+        <value>23</value>
+      </counter>
+      <counter>
+        <item-type type-id="initial-state" type="UmlInitialState" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="final-state" type="UmlFinalState" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="state" type="UmlState" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="general-transition" type="UmlTransition" />
+        <value>3</value>
+      </counter>
+    </entity-ids>
+    <diagrams>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlStateMachineDiagram</type>
+        <value>1</value>
+      </counter>
+    </diagrams>
+    <fields />
+  </counters>
+  <alias-groups />
+  <management uid="md-f7209dc395f34ff587ce1ac197f9b7f0" name="" task-id-sequence="0">
+    <persons>
+      <person id="P2ab7f0a03fac487fafd571409f63650b">
+        <first-name />
+        <last-name />
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+      </person>
+    </persons>
+    <teams />
+    <sprints />
+    <projects />
+    <modules />
+    <tasks />
+    <to-dos />
+  </management>
+  <glossary id="glsr-c241daf80fad49f1a23188a90f22a4f0" />
+  <types default="UML">
+    <type-sets>
+      <type-set file="UmlTypes.xml" />
+    </type-sets>
+    <custom-types />
+  </types>
+  <items />
+  <models>
+    <model id="pe3cab8dacfd7477aa9a0063f0c95a643_204369045" name="Model1" namespace="" order-index="1">
+      <meta>
+        <authors>
+          <author> </author>
+        </authors>
+        <description />
+        <creation-date>12/20/2018 10:09:35</creation-date>
+        <change-date>01/01/0001 00:00:00</change-date>
+        <revision-count>0</revision-count>
+        <version />
+      </meta>
+      <abstract-items />
+      <sub-models />
+      <diagram type="uml-statechart" id="p25c0fafb11f14c3fbb286253488ca04e_234519391" name="StateMachineDiagram1" order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="-100,-100">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>12/20/2018 10:09:35</creation-date>
+          <change-date>12/20/2018 10:10:45</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items>
+          <item id="0b89df7a37254ffda628789200a86810" cid="IS001" type="initial-state" name="InitialState1" style-class="" visibility="package" change-tracking-state="added" creator="P2ab7f0a03fac487fafd571409f63650b" creation-date="12/20/2018 10:09:42">
+            <style class="default" />
+          </item>
+          <item id="5b2dd88261244fdf8ff778f86abb04c9" cid="FS001" type="final-state" name="FinalState1" style-class="" visibility="package" change-tracking-state="added" creator="P2ab7f0a03fac487fafd571409f63650b" creation-date="12/20/2018 10:09:49">
+            <style class="default" />
+          </item>
+          <item id="b84b3b48ccc94c3bb86ba3dd2f3bba7e" cid="ST001" type="state" name="State1" style-class="" visibility="package" change-tracking-state="added" creator="P2ab7f0a03fac487fafd571409f63650b" creation-date="12/20/2018 10:09:52">
+            <style class="default" />
+            <state-invariant />
+            <actions />
+          </item>
+          <item id="2e6d687648fb4f919f8011ad818f4a43" cid="ELEM001" type="general-transition" name="" style-class="" visibility="package" change-tracking-state="added" creator="P2ab7f0a03fac487fafd571409f63650b" creation-date="12/20/2018 10:10:25" from="0b89df7a37254ffda628789200a86810" to="b84b3b48ccc94c3bb86ba3dd2f3bba7e">
+            <style class="default" />
+            <transition guard="" behaviourExpression="" />
+          </item>
+          <item id="249ee9c4f70441fc89621a2415f3e6ec" cid="ELEM002" type="general-transition" name="" style-class="" visibility="package" change-tracking-state="added" creator="P2ab7f0a03fac487fafd571409f63650b" creation-date="12/20/2018 10:10:37" from="b84b3b48ccc94c3bb86ba3dd2f3bba7e" to="5b2dd88261244fdf8ff778f86abb04c9">
+            <style class="default" />
+            <transition guard="" behaviourExpression="" />
+          </item>
+        </abstract-items>
+        <layer id="20229e7896394205ac8cb6e3fa28269c" name="Default" visible="true" enabled="true" locked="false">
+          <item id="0b89df7a37254ffda628789200a86810" iid="2e42f5ea3b9843519eb6ffb9c34f1184" anchor="None" creation-date="12/20/2018 10:09:42" order-index="0" type="entity">
+            <layout ax="-17.5" ay="12.5" awidth="25" aheight="25" x="-17.5" y="12.5" width="25" height="25" name-position="0,10" name-anchor="bottom" auto-anchor="true" label-attached="false" />
+          </item>
+          <item id="5b2dd88261244fdf8ff778f86abb04c9" iid="1739fbdbacac480493bf4a25382299bb" anchor="None" creation-date="12/20/2018 10:09:49" order-index="1" type="entity">
+            <layout ax="397.5" ay="12.5" awidth="25" aheight="25" x="397.5" y="12.5" width="25" height="25" name-position="0,10" name-anchor="bottom" auto-anchor="true" label-attached="false" />
+          </item>
+          <item id="b84b3b48ccc94c3bb86ba3dd2f3bba7e" iid="d8418c4904fe42f9b5d79e591b49617b" anchor="None" creation-date="12/20/2018 10:09:52" order-index="2" type="entity">
+            <layout ax="140" ay="0" awidth="100" aheight="50" x="140" y="0" width="100" height="50" />
+          </item>
+          <item id="2e6d687648fb4f919f8011ad818f4a43" iid="fb27834c849841e9a6ea4130dc22f724" creation-date="12/20/2018 10:10:25" order-index="3" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="8" y1="25" x2="140" y2="25" start-border-pos="0.375" end-border-pos="0.875" name-position="0,0">
+              <points>
+                <point x="8" y="25" />
+                <point x="140" y="25" />
+              </points>
+            </layout>
+            <relation from="0b89df7a37254ffda628789200a86810" from-iid="2e42f5ea3b9843519eb6ffb9c34f1184" to="b84b3b48ccc94c3bb86ba3dd2f3bba7e" to-iid="d8418c4904fe42f9b5d79e591b49617b" />
+          </item>
+          <item id="249ee9c4f70441fc89621a2415f3e6ec" iid="7e691685522f4f1e8eb54149626be9c8" creation-date="12/20/2018 10:10:37" order-index="4" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="240" y1="25" x2="398" y2="25" start-border-pos="0.375" end-border-pos="0.875" name-position="0,0">
+              <points>
+                <point x="240" y="25" />
+                <point x="398" y="25" />
+              </points>
+            </layout>
+            <relation from="b84b3b48ccc94c3bb86ba3dd2f3bba7e" from-iid="d8418c4904fe42f9b5d79e591b49617b" to="5b2dd88261244fdf8ff778f86abb04c9" to-iid="1739fbdbacac480493bf4a25382299bb" />
+          </item>
+        </layer>
+      </diagram>
+    </model>
+  </models>
+</sim-project>
