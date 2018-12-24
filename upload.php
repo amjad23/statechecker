@@ -4,13 +4,27 @@
 $checkinitialstate = false;
 $checkfinalstate = false;
 $checkstate = false;
+$checkgeneraltransition = false;
+$checkcompositestate = false;
+$checkdecision = false;
+$checktransition = false;
+
 $checkstatename = false;
 $checkinitialstatename = false;
 $checkfinalstatename = false;
-$checkgeneraltransition = false;
+$checkcompositestatename = false;
+$checkgeneraltransitionname = false;
+$checkdecisionname = false;
+$checktransitionname = false;
+
 $checkfrom = false;                                        
 $checkto = false;
+$checkinitialexist = false;
+$checkfinalexist = false;
 
+//initialize empty array
+$listitem = [];
+$transitioname = [];
 
 
 $target_dir = "uploads/";
@@ -65,7 +79,13 @@ foreach ($xml->children() as $child)
                         foreach ($child3->children() as $child4){
                             if($child4->getname() == "abstract-items"){
                                 foreach ($child4->children() as $child5){
-                                    // echo $child5['type']." ";
+
+                                    
+
+                                    //array list type and name
+                                    $arraytopush = array($child5['type'],$child5['name']);
+                                    array_push($listitem,$arraytopush);
+
 
                                     //check if initial-state is presenet
                                     if($child5['type'] == "initial-state"){
@@ -80,6 +100,16 @@ foreach ($xml->children() as $child)
                                     //check state is present
                                     if($child5['type'] == "state"){
                                         $checkstate = true;
+                                    }
+
+                                    //check composite-state
+                                    if($child5['type'] == "composite-state" ){
+                                        $checkcompositestate = true;
+                                    }
+
+                                    //check decision
+                                    if($child5['type'] == "decision" ){
+                                        $checkdecision = true;
                                     }
 
                                     //////////////////////////////////////////////////////////////////////////////////////////
@@ -99,6 +129,18 @@ foreach ($xml->children() as $child)
                                         $checkfinalstatename = true;
                                     }
 
+                                    //check composite state name
+                                    if($child5['name'] == null){
+                                        $checkcompositestatename = true;
+                                    }
+
+                                    //check decision name
+                                    if($child5['name'] == null){
+                                        $checkdecisionname = true;
+                                    }
+
+                                    
+
                                     //////////////////////////////////////////////////////////////////////////////////////////
 
                                     //check general transition connectivity
@@ -116,6 +158,41 @@ foreach ($xml->children() as $child)
                                         }
                                     }
 
+                                    //check initial and final state
+                                       
+                                        if($child5['name'] == "InitialState1"){
+                                            $checkinitialexist = true;
+                                        }
+
+                                        if($child5['name'] == "FinalState1"){                                        
+                                            $checkfinalexist = true;
+                                    }
+                                
+
+                                    //get name for transition
+                                    foreach($child5->children() as $child6){
+                                        if($child6->getname() == "transition"){
+                                            foreach($child6->children() as $child7){
+                                            
+                                            //check for transition
+                                            if($child6['type'] == "transition"){
+                                              $checktransition = true;
+                                            }
+                                            
+                                            //check transitionname
+                                            if($child6['transition'] == ""){
+                                                $checktransitionname = true;
+                                            }
+                                                // echo " TRANSITION NAME : ".$child7;
+                                                array_push($transitioname,$child7);
+
+                                            }
+                                        }
+                                    }
+
+                                    }
+
+
                                 }
 
 
@@ -126,12 +203,14 @@ foreach ($xml->children() as $child)
             }
         }
     }
-        
-}
+
+
 //output for element structure
 //initial state present
 if($checkinitialstate == true){
     echo "initial state is present ";
+}else{
+    echo " Your diagram should have initial state.";
 }
 //final state present
 if($checkfinalstate == true){
@@ -142,6 +221,28 @@ if($checkstate == true){
     echo "state is present ";
 }
 
+//check for general transition
+if($checkgeneraltransition == true){
+    echo "general transition is present ";
+}
+
+//composite state
+if($checkcompositestate == true){
+    echo "composite state is present";
+}
+
+//decision
+if($checkdecision == true){
+    echo "decision is present";
+}
+
+//output transition present
+if($checktransition == true){
+    echo "transition is present ";
+    }
+
+//transition
+
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -149,29 +250,429 @@ if($checkstate == true){
 //state name absent
 if($checkstatename == true){
     echo "state name is absent ";
+}else{
+    echo "state name is available";
 }
 
 //initial state name absent
 if($checkinitialstatename == true){
     echo "initial state name is absent ";
+}else{
+    echo "initial state name is available";
 }
 
 //final state name absent
 if($checkfinalstatename == true){
     echo "final state name is absent ";
+}else{
+    echo "final state name is available";
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////
-
-//check for general transition
-if($checkgeneraltransition == true){
-    echo "general transition is exist ";
+//general transition name absent
+if($checkgeneraltransitionname == true){
+    echo "general transition name is absent";
+}else{
+    echo "general transition name is available";
 }
+
+//composite state name absent
+if($checkcompositestatename == true){
+    echo "composite state name is absent";
+}else{
+    echo "composite state name is available";
+}
+
+//decison name
+if($checkdecision == true){
+    echo "decision name is absent";
+}else{
+    echo "decision name is available";
+}
+
+//output transition name
+if($checktransitionname == true){
+echo "transition name is present ";
+}
+
+
+
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
 //check general transtion from and to
 if(($checkfrom == true)||($checkto == true)){
     echo "connectivity is not complete";
+}else{
+    echo "connectivity is complete";
 }
+
+echo "\n initial state is ".$checkinitialexist;
+
+echo "\n final state is ".$checkfinalexist;
+
+if(($checkinitialexist == false)||($checkfinalexist == false)){
+    echo "initial or final state is not exist";
+}else{
+    echo "initial and final state exists ";
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+//list array type and name
+$arraylength = count($listitem);
+
+for($x = 0; $x < $arraylength; $x++) {
+    $array2lentgh = count($listitem[$x]);
+    for($y = 0; $y < $array2lentgh; $y++){
+        if($y == 0){
+            echo " this item type is ".$listitem[$x][$y];
+        }elseif($y == 1){
+            echo " this item name is ".$listitem[$x][$y];
+        } 
+    }
+    echo "<br>";
+}
+
 ?>
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Left Sidebar - Landed by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="index.php"></a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.php">Home</a></li>
+							<li>
+								<a href="#">Menu</a>
+								<ul>
+									<li><a href="uploadfile.php">FILE UPLOAD</a></li>
+									<li><a href="check.php">CHECK ELEMENTS</a></li>
+								</ul>
+							</li>
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>Check Your State Machine Diagram</h2>
+						</header>
+
+						<div class="row gtr-150">
+							<div class="col-4 col-12-medium">
+								<!-- Sidebar -->
+									<section id="sidebar">
+										<section>
+											<h3>Check Elements Existence</h3>
+											<p>Output shown shows the elements should
+												exist in a State Machine Diagram.
+											</p>
+										</section>
+									</section>
+							</div>
+
+							<div class="col-8 col-12-medium imp-medium">
+									<!-- Content -->
+									<div class="col-12">
+                                        <textarea name="message" id="message" placeholder="" rows="3"><?php
+                                        //initial state present
+if($checkinitialstate == true){
+    echo "initial state is present \n";
+}
+//final state present
+if($checkfinalstate == true){
+    echo "final state is present \n";
+}
+//state present
+if($checkstate == true){
+    echo "state is present \n";
+}
+
+//check for general transition
+if($checkgeneraltransition == true){
+    echo "general transition is present \n";
+}
+
+//composite state
+if($checkcompositestate == true){
+    echo "composite state is present \n";
+}
+
+//decision
+if($checkdecision == true){
+    echo "decision is present \n";
+}
+
+//output transition present
+if($checktransition == true){
+    echo "transition is present \n";
+    }
+
+                                        ?></textarea>
+									</div>
+	
+										<br>
+
+									</div>
+						</div>
+
+						<hr>
+
+						<div class="row gtr-150">
+								<div class="col-4 col-12-medium">
+									<!-- Sidebar -->
+									<section id="sidebar">
+											<section>
+													<h3>Check Elements Name</h3>
+													<p>Output shown shows the name of each elements
+														existed in the State Machine Diagram.
+													</p>
+												</section>
+										</section>
+								</div>
+	
+								<div class="col-8 col-12-medium imp-medium">
+										<!-- Content -->
+										<div class="col-12">
+											<textarea name="message" id="message" placeholder="" rows="3"><?php 
+//state name absent
+if($checkstatename == true){
+    echo "state name is absent \n";
+}else{
+    echo "state name is available \n";
+}
+
+//initial state name absent
+if($checkinitialstatename == true){
+    echo "initial state name is absent  \n";
+}else{
+    echo "initial state name is available  \n";
+}
+
+//final state name absent
+if($checkfinalstatename == true){
+    echo "final state name is absent  \n";
+}else{
+    echo "final state name is available  \n";
+}
+
+//general transition name absent
+if($checkgeneraltransitionname == true){
+    echo "general transition name is absent  \n";
+}else{
+    echo "general transition name is available  \n";
+}
+
+//composite state name absent
+if($checkcompositestatename == true){
+    echo "composite state name is absent  \n";
+}else{
+    echo "composite state name is available  \n";
+}
+
+//decison name
+if($checkdecision == true){
+    echo "decision name is absent  \n";
+}else{
+    echo "decision name is available  \n";
+}
+
+//output transition name
+if($checktransitionname == true){
+echo "transition name is present  \n";
+}
+                                            ?></textarea>
+										</div>
+											<br>
+									</div>
+
+									</div>
+
+					 	             <hr>
+
+								<div class="row gtr-150">
+								<div class="col-4 col-12-medium">
+									<!-- Sidebar -->
+									<section id="sidebar">
+											<section>
+													<h3>Check Existence of Initial and Final State</h3>
+													<p>Initial State and Final State should exists
+														side-by-side. If one of the elements not existed,
+														the diagram is wrong.
+													</p>
+												</section>
+										</section>
+								</div>
+								
+								<div class="col-8 col-12-medium imp-medium">
+										<!-- Content -->
+										<div class="col-12">
+                                            <textarea name="message" id="message" placeholder="" rows="3" disabled><?php
+                                            
+                                            echo "\n initial state is ".$checkinitialexist;
+                                            
+                                            echo "\n final state is ".$checkfinalexist;
+                                            
+                                            if(($checkinitialexist == false)||($checkfinalexist == false)){
+                                                echo "initial or final state is not exist \n";
+                                            }else{
+                                                echo "initial and final state exists \n";
+                                            }
+                                            ?></textarea>
+										</div>
+											<br>
+									</div>
+									</div>
+
+									<hr>
+
+								<div class="row gtr-150">
+								<div class="col-4 col-12-medium">
+									<!-- Sidebar -->
+									<section id="sidebar">
+											<section>
+													<h3>Check Transition Name</h3>
+													<p>Output shows the transition name for
+														each transition available in the uploaded
+														diagram.
+													</p>
+												</section>
+										</section>
+								</div>
+								
+								<div class="col-8 col-12-medium imp-medium">
+										<!-- Content -->
+										<div class="col-12">
+                                            <textarea name="message" id="message" placeholder="" rows="3"><?php
+
+                                                foreach($transitioname as $trans){
+                                                    echo $trans."\n";
+                                                }
+
+                                            ?></textarea>
+										</div>
+											<br>
+									</div>
+									</div>
+
+									<hr>
+
+									<div class="row gtr-150">
+								<div class="col-4 col-12-medium">
+									<!-- Sidebar -->
+									<section id="sidebar">
+											<section>
+													<h3>Check Transition Connectivity</h3>
+													<p>Transition connectivity is checked between 
+														each phase of the state.
+													</p>
+												</section>
+										</section>
+								</div>
+								
+								<div class="col-8 col-12-medium imp-medium">
+										<!-- Content -->
+										<div class="col-12">
+                                            <textarea name="message" id="message" placeholder="" rows="3"><?php
+                                            //check general transtion from and to
+if(($checkfrom == true)||($checkto == true)){
+    echo "connectivity is not complete \n";
+}else{
+    echo "connectivity is complete \n";
+}
+                                            ?></textarea>
+										</div>
+											<br>
+									</div>
+									</div>
+
+									<hr>
+
+									<div class="row gtr-150">
+								<div class="col-4 col-12-medium">
+									<!-- Sidebar -->
+									<section id="sidebar">
+											<section>
+													<h3>Overall Elements Exist For This Diagram</h3>
+													<p>The output shows the overall existing elements 
+														available in the uploaded diagram.
+													</p>
+												</section>
+										</section>
+								</div>
+								
+								<div class="col-8 col-12-medium imp-medium">
+										<!-- Content -->
+										<div class="col-12">
+                                            <textarea name="message" id="message" placeholder="" rows="3"><?php
+                                            $arraylength = count($listitem);
+
+                                            for($x = 0; $x < $arraylength; $x++) {
+                                                $array2lentgh = count($listitem[$x]);
+                                                for($y = 0; $y < $array2lentgh; $y++){
+                                                    if($y == 0){
+                                                        echo " this item type is ".$listitem[$x][$y];
+                                                    }elseif($y == 1){
+                                                        echo " this item name is ".$listitem[$x][$y];
+                                                    } 
+                                                }
+                                                echo "\n";
+                                            }
+                                            ?></textarea>
+										</div>
+											<br>
+									</div>
+									</div>
+
+									<hr>
+
+							
+
+						
+					</div>
+				</div>
+
+
+			
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

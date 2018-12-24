@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 <!DOCTYPE HTML>
 <!--
 	Landed by HTML5 UP
@@ -17,25 +24,15 @@
 
 			<!-- Header -->
 				<header id="header">
-					<h1 id="logo"><a href="index.php">State Checker</a></h1>
+					<h1 id="logo"><a href="index.php"></a></h1>
 					<nav id="nav">
 						<ul>
 							<li><a href="index.php">Home</a></li>
 							<li>
-								<a href="#">Layouts</a>
+								<a href="#">Menu</a>
 								<ul>
 									<li><a href="uploadfile.php">FILE UPLOAD</a></li>
 									<li><a href="check.php">CHECK ELEMENTS</a></li>
-									<li><a href="no-sidebar.html">No Sidebar</a></li>
-									<li>
-										<a href="#">Submenu</a>
-										<ul>
-											<li><a href="#">Option 1</a></li>
-											<li><a href="#">Option 2</a></li>
-											<li><a href="#">Option 3</a></li>
-											<li><a href="#">Option 4</a></li>
-										</ul>
-									</li>
 								</ul>
 							</li>
 							<li><a href="elements.html">Elements</a></li>
@@ -47,22 +44,18 @@
 				<div id="main" class="wrapper style1">
 					<div class="container">
 						<header class="major">
-							<h2>Check Your State and Their Transition</h2>
+							<h2>Check Your State Machine Diagram</h2>
 						</header>
+
 						<div class="row gtr-150">
-
-
 							<div class="col-4 col-12-medium">
 								<!-- Sidebar -->
 									<section id="sidebar">
 										<section>
-											<h3>Check State Existence</h3>
-											<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit..</p>
-											<footer>
-												<ul class="actions">
-													<li><a href="#" class="button">Check</a></li>
-												</ul>
-											</footer>
+											<h3>Check Elements Existence</h3>
+											<p>Output shown shows the elements should
+												exist in a State Machine Diagram.
+											</p>
 										</section>
 									</section>
 							</div>
@@ -74,26 +67,21 @@
 									</div>
 	
 										<br>
-	
-									<div class="col-12">
-										<textarea name="message" id="message" placeholder="" rows="3"></textarea>
+
 									</div>
-								</div>
 						</div>
+
 						<hr>
+
 						<div class="row gtr-150">
-
-
 								<div class="col-4 col-12-medium">
 									<!-- Sidebar -->
+									<section id="sidebar">
 											<section>
-													<h3>Check Transition</h3>
-													<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit..</p>
-													<footer>
-														<ul class="actions">
-															<li><a href="#" class="button">Check</a></li>
-														</ul>
-													</footer>
+													<h3>Check Elements Name</h3>
+													<p>Output shown shows the name of each elements
+														existed in the State Machine Diagram.
+													</p>
 												</section>
 										</section>
 								</div>
@@ -103,35 +91,119 @@
 										<div class="col-12">
 											<textarea name="message" id="message" placeholder="" rows="3"></textarea>
 										</div>
-		
 											<br>
-		
-										<div class="col-12" , >
-											<textarea name="message" id="message"  placeholder="" rows="3"></textarea>
-										</div>
 									</div>
 
 									</div>
-							</div>
-						</div>
+
+					 	             <hr>
+
+								<div class="row gtr-150">
+								<div class="col-4 col-12-medium">
+									<!-- Sidebar -->
+									<section id="sidebar">
+											<section>
+													<h3>Check Existence of Initial and Final State</h3>
+													<p>Initial State and Final State should exists
+														side-by-side. If one of the elements not existed,
+														the diagram is wrong.
+													</p>
+												</section>
+										</section>
+								</div>
+								
+								<div class="col-8 col-12-medium imp-medium">
+										<!-- Content -->
+										<div class="col-12">
+											<textarea name="message" id="message" placeholder="" rows="3"></textarea>
+										</div>
+											<br>
+									</div>
+									</div>
+
+									<hr>
+
+								<div class="row gtr-150">
+								<div class="col-4 col-12-medium">
+									<!-- Sidebar -->
+									<section id="sidebar">
+											<section>
+													<h3>Check Transition Name</h3>
+													<p>Output shows the transition name for
+														each transition available in the uploaded
+														diagram.
+													</p>
+												</section>
+										</section>
+								</div>
+								
+								<div class="col-8 col-12-medium imp-medium">
+										<!-- Content -->
+										<div class="col-12">
+											<textarea name="message" id="message" placeholder="" rows="3"></textarea>
+										</div>
+											<br>
+									</div>
+									</div>
+
+									<hr>
+
+									<div class="row gtr-150">
+								<div class="col-4 col-12-medium">
+									<!-- Sidebar -->
+									<section id="sidebar">
+											<section>
+													<h3>Check Transition Connectivity</h3>
+													<p>Transition connectivity is checked between 
+														each phase of the state.
+													</p>
+												</section>
+										</section>
+								</div>
+								
+								<div class="col-8 col-12-medium imp-medium">
+										<!-- Content -->
+										<div class="col-12">
+											<textarea name="message" id="message" placeholder="" rows="3"></textarea>
+										</div>
+											<br>
+									</div>
+									</div>
+
+									<hr>
+
+									<div class="row gtr-150">
+								<div class="col-4 col-12-medium">
+									<!-- Sidebar -->
+									<section id="sidebar">
+											<section>
+													<h3>Overall Elements Exist For This Diagram</h3>
+													<p>The output shows the overall existing elements 
+														available in the uploaded diagram.
+													</p>
+												</section>
+										</section>
+								</div>
+								
+								<div class="col-8 col-12-medium imp-medium">
+										<!-- Content -->
+										<div class="col-12">
+											<textarea name="message" id="message" placeholder="" rows="3"></textarea>
+										</div>
+											<br>
+									</div>
+									</div>
+
+									<hr>
+
+							
+
+						
 					</div>
 				</div>
 
 
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-						<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</footer>
+			
 
 		</div>
 

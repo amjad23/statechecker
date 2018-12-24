@@ -24,29 +24,18 @@
 
 		<!-- Header -->
 		<header id="header">
-			<h1 id="logo"><a href="index.php">State Checker</a></h1>
+			<h1 id="logo"><a href="index.php"></a></h1>
 			<nav id="nav">
 				<ul>
 					<li><a href="index.php">Home</a></li>
 					<li>
-						<a href="#">Layouts</a>
+						<a href="#">Menu</a>
 						<ul>
 							<li><a href="uploadfile.php">FIE UPLOAD</a></li>
-							<li><a href="check.php">CHECK ELEMENTS</a></li>
-							<li><a href="no-sidebar.html">No Sidebar</a></li>
-							<li>
-								<a href="#">Submenu</a>
-								<ul>
-									<li><a href="#">Option 1</a></li>
-									<li><a href="#">Option 2</a></li>
-									<li><a href="#">Option 3</a></li>
-									<li><a href="#">Option 4</a></li>
-								</ul>
-							</li>
+							<li><a href="upload.php">CHECK ELEMENTS</a></li>
 						</ul>
 					</li>
 					<li><a href="elements.html">Elements</a></li>
-					<li><a href="#" class="button primary">Sign Up</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -56,7 +45,7 @@
 			<div class="container">
 				<header class="major">
 					<h2>Upload Your File</h2>
-					<p>Ipsum dolor feugiat aliquam tempus sed magna lorem consequat accumsan</p>
+					<p>File chosen to be upload must be in .SIMP or .XML</p>
 				</header>
 
 				<div class="row gtr-150">
@@ -67,8 +56,8 @@
 							<div class="col-6 col-6-medium">
 								<form class="box" method="post" action="upload.php" enctype="multipart/form-data">
 									<div class="box__input">
-                    <input type="file" name="fileToUpload" id="fileToUpload">
-										<input type="submit" value="Upload Image" name="submit">
+                                    <input type="file" name="fileToUpload"  id="fileToUpload">
+										<input type="submit" value="Upload File" name="submit">
 									</div>
 									<div class="box__uploading">Uploading&hellip;</div>
 									<div class="box__success">Done!</div>
@@ -76,65 +65,91 @@
 								</form>
 								<style>
 									.box__dragndrop,
-                  .box__uploading,
-                  .box__success,
-                  .box__error {
-                    display: none;
-                  }
+									.box__uploading,
+									.box__success,
+									.box__error {
+										display: none;
+                 								 }
 								</style>
 							</div>
 						</section>
 					</div>
 
 
-					<div class="col-4 col-12-medium">
+					
+				</div>
+
+<div class="col-4 col-12-medium">
 						<!-- Sidebar -->
 						<section id="sidebar">
 							<section>
-								<h3>Magna Feugiat</h3>
-								<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed
-									tristique purus vitae volutpat commodo suscipit ullamcorper commodo suscipit amet sed nibh. Proin a
-									ullamcorper sed blandit..</p>
-								<footer>
-									<ul class="actions">
-										<li><a href="#" class="button">Learn More</a></li>
-									</ul>
-								</footer>
+								<h3>TUTORIAL</h3>
+								<p>A quick overview and tutorial before you upload the file and how does it works</p>
 							</section>
 							<hr />
+
 							<section>
-								<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-								<h3>Amet Lorem Tempus</h3>
-								<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed
-									tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
-								<footer>
-									<ul class="actions">
-										<li><a href="#" class="button">Learn More</a></li>
-									</ul>
-								</footer>
+							<ol style="list-style-type:square">
+								<li><b>File Type</b></li>
+								<p>Your file type must be in .SIMP or .XML so that the elements inside 
+									them can be parsed and targeted to display as an output.
+								</P>
+
+							<hr/>
+
+								<li><b>Where to obtain .SIMP or .XML file</b></li>
+								<p>.SIMP file can only be obtained from Software Idea Modeler
+									Tools which to be installed. Note that this tool can only 
+									be obtained free which is in trial version and paid for the full
+									version. Whereas .XML file can be obtained from any tools available
+									that generates diagram via the XML parsing into an image file or folder.
+								</P>
+
+							<hr/>
+							
+								<li><b>State machine diagram only</b></li>
+								<p>State Checker only detects accurately for State Machine Diagram only.
+									While it does detects the elements in the diagram, the output would
+									be incorrect.
+								</P>
+							
+							<hr/>
+
+								<li><b>What is displayed</b></li>
+								<p>State Checker displays error which is what elements is absent, name for
+									the elements and whether or not the transition is completed. Note that 
+									it does not come with the recommendation on how to correct your diagram,
+									rather it shows the output of what elements exist in the diagram and is
+									regarded as a full analysis for your diagram.
+								</P>
+
+							<hr/>
+
+							<li><b>Summary file</b></li>
+								<p>State Checker provides a full analysis in text-based file which
+									can be downloaded for the user to be saved and be used as a documentation
+									for their state machine diagram.
+								</P>
+	
+
+							</ol>
 							</section>
-						</section>
+
+
+							
+							
+								
+							
+
+
+							
 
 					</div>
-				</div>
+
 			</div>
 		</div>
 
-		<!-- Footer -->
-		<footer id="footer">
-			<ul class="icons">
-				<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-				<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-				<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-				<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-				<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-				<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
-			</ul>
-			<ul class="copyright">
-				<li>&copy; Untitled. All rights reserved.</li>
-				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-			</ul>
-		</footer>
+		
 
 	</div>
 
