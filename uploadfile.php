@@ -11,7 +11,7 @@
 <html>
 
 <head>
-	<title>Right Sidebar - Landed by HTML5 UP</title>
+	<title>STATE CHECKER</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -32,7 +32,7 @@
 						<a href="#">Menu</a>
 						<ul>
 							<li><a href="uploadfile.php">FIE UPLOAD</a></li>
-							<li><a href="upload.php">CHECK ELEMENTS</a></li>
+							<li><a href="check.php">CHECK ELEMENTS</a></li>
 						</ul>
 					</li>
 					<li><a href="elements.html">Elements</a></li>

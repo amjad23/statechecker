@@ -133,7 +133,9 @@
           <version />
         </meta>
         <abstract-items>
-          
+          <item id="b57bd379713c43fb832068261b525925" cid="IS001" type="initial-state" name="InitialState1" style-class="" visibility="package" change-tracking-state="added" creator="Pef49e17722534798959f6caf7e67f934" creation-date="12/18/2018 15:59:32">
+            <style class="default" />
+          </item>
           <item id="a81d4ed4d73d46029e7a677566b8ab5d" cid="FS001" type="final-state" name="FinalState1" style-class="" visibility="package" change-tracking-state="added" creator="Pef49e17722534798959f6caf7e67f934" creation-date="12/18/2018 15:59:37">
             <style class="default" />
           </item>
@@ -147,7 +149,7 @@
             <state-invariant />
             <actions />
           </item>
-          <item id="2433964cdb2d4e29bc11d21a7794194c" cid="ELEM001" type="general-transition" name="" style-class="" visibility="package" change-tracking-state="added" creator="Pef49e17722534798959f6caf7e67f934" creation-date="12/18/2018 16:00:57" from="" to="2b77db37024f4fcc88e15a1d898fb956">
+          <item id="2433964cdb2d4e29bc11d21a7794194c" cid="ELEM001" type="general-transition" name="" style-class="" visibility="package" change-tracking-state="added" creator="Pef49e17722534798959f6caf7e67f934" creation-date="12/18/2018 16:00:57" from="2b77db37024f4fcc88e15a1d898fb956" to="2b77db37024f4fcc88e15a1d898fb956">
             <style class="default" />
             <transition guard="" behaviourExpression="">
               <trigger>insertion of card</trigger>
@@ -178,7 +180,7 @@
               <trigger>invalid pin</trigger>
             </transition>
           </item>
-          <item id="6f544867b6854491b40ace4b7a355ddb" cid="CS001" type="composite-state" name="transaction phase" style-class="" visibility="package" change-tracking-state="added" creator="Pef49e17722534798959f6caf7e67f934" creation-date="12/18/2018 16:06:02">
+          <item id="6f544867b6854491b40ace4b7a355ddb" cid="CS001" type="composite-state" name="" style-class="" visibility="package" change-tracking-state="added" creator="Pef49e17722534798959f6caf7e67f934" creation-date="12/18/2018 16:06:02">
             <style class="default" />
             <state-invariant />
             <actions />
@@ -214,7 +216,7 @@
               <trigger>choose transaction</trigger>
             </transition>
           </item>
-          <item id="5e7fbc036b834328ae5fc4f8f577e4ce" cid="ST005" type="state" name="check" style-class="" owner="6f544867b6854491b40ace4b7a355ddb" visibility="package" change-tracking-state="added" creator="Pef49e17722534798959f6caf7e67f934" creation-date="12/18/2018 16:11:20">
+          <item id="5e7fbc036b834328ae5fc4f8f577e4ce" cid="ST005" type="state" name="" style-class="" owner="6f544867b6854491b40ace4b7a355ddb" visibility="package" change-tracking-state="added" creator="Pef49e17722534798959f6caf7e67f934" creation-date="12/18/2018 16:11:20">
             <style class="default" />
             <state-invariant />
             <actions />
